@@ -1,5 +1,3 @@
-<!-- FILEPATH: /c:/Users/DeeJa/Desktop/codingshit/flatiron/phase 1/phase one assesment/Untitled-1.html -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,29 +11,7 @@
       <button type="submit">Search</button>
     </form>
     <div id="spell-results"></div>
-    <script>
-      const form = document.querySelector('form');
-      const spellResults = document.querySelector('#spell-results');
-
-      form.addEventListener('submit', async (event) => {
-        event.preventDefault();
-        const spellName = document.querySelector('#spell-name').value;
-        const response = await fetch(`https://www.dnd5eapi.co/api/spells/?name=${spellName}`);
-        const data = await response.json();
-        const spellList = data.results;
-        spellResults.innerHTML = '';
-        if (spellList.length === 0) {
-          spellResults.innerHTML = 'No spells found.';
-        } else {
-          spellList.forEach((spell) => {
-            const spellLink = document.createElement('a');
-            spellLink.href = `https://www.dnd5eapi.co${spell.url}`;
-            spellLink.textContent = spell.name;
-            spellResults.appendChild(spellLink);
-            spellResults.appendChild(document.createElement('br'));
-          });
-        }
-      });
+    
     </script>
   </body>
 </html>
