@@ -1,31 +1,25 @@
+//adding search bar
+const searchContainer = document.querySelector('#search-container');
+const searchInput = document.createElement('input');
 
-const searchInput = document.querySelector('#search-input');
-const resultsContainer = document.querySelector('#results-container');
-
+//adding event listener to search bar with fetch for dnd spells
 searchInput.addEventListener('input', async (event) => {
   // adding button to search with
   const searchButton = document.createElement('button');
-  const searchTerm = event.target.value;
-  const response = await fetch(`https://www.dnd5eapi.co/api/spells?name=${searchTerm}`);
-  const data = await response.json();
-  const spells = data.results;
-
-  resultsContainer.innerHTML = '';
-
-  spells.forEach(async (spell) => {
-    const spellResponse = await fetch(`https://www.dnd5eapi.co${spell.url}`);
-    const spellData = await spellResponse.json();
-
-    const spellName = document.createElement('h2');
-    spellName.textContent = spellData.name;
-
-    const spellDescription = document.createElement('p');
-    spellDescription.textContent = spellData.desc;
-
-    const spellElement = document.createElement('div');
-    spellElement.appendChild(spellName);
-    spellElement.appendChild(spellDescription);
-
-    resultsContainer.appendChild(spellElement);
+  searchButton.textContent = 'Search';
+  searchButton.classList.add('search-button');
+  //calling the dnd api with the search input
+  const dndApi = await fetch(`https://www.dnd5eapi.co/api/spells/${event.target.value}`);
+  const dndData = await dndApi.json();
+  //adding the search results to the page
+  const searchResults = document.createElement('div');
+  searchResults.classList.add('search-results');
+  searchResults.innerHTML = `
+  <h2>${dndData.name}</h2>
+  <p>${dndData.desc}</p>
+  `;
+  searchContainer.append(searchResults);
+  searchContainer.append(searchButton);
+  
   });
 });
