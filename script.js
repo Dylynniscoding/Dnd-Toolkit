@@ -14,20 +14,26 @@ async function searchSpells() {
         });
 }
 
-document.addEventListener('keydown', async (event) => {
+document.addEventListener('keydown', (event) => {
     if (event.key === '=') {
-        const response = await fetch('https://www.dnd5eapi.co/api/spells');
-        const data = await response.json();
-        const randomSpellIndex = Math.floor(Math.random() * data.results.length);
-        const randomSpell = data.results[randomSpellIndex];
-        const spellResponse = await fetch(`https://www.dnd5eapi.co${randomSpell.url}`);
-        const spellData = await spellResponse.json();
+        const randomIndex = Math.floor(Math.random() * 319);
         const resultsDiv = document.getElementById('results');
-        resultsDiv.innerHTML = ''; // clear the results div
+        resultsDiv.innerHTML = '';
+        const spellResponse = await fetch(`https://www.dnd5eapi.co/api/spells/${randomIndex}`);
+        const spellData = await spellResponse.json();
         const spellDiv = document.createElement('div');
         spellDiv.innerHTML = `<h3>${spellData.name}</h3><p>${spellData.desc}</p>`;
         resultsDiv.appendChild(spellDiv);
     }
 });
-});
 
+// const resultsDiv = document.getElementById('results');
+// resultsDiv.addEventListener('DOMNodeInserted', () => {
+//     if (resultsDiv.children.length > 1) {
+//         resultsDiv.removeChild(resultsDiv.firstChild);
+//     }
+// });
+
+
+    
+}
