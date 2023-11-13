@@ -13,3 +13,6 @@ async function searchSpells() {
         resultsDiv.appendChild(spellDiv);
     });
 }
+
+//adding dice roll functionality 
+
