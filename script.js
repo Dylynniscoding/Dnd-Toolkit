@@ -14,5 +14,5 @@ async function searchSpells() {
     });
 }
 
-//adding dice roll functionality 
-
+//adding dice roll functionality with event listener
+document.getElementById("roll-button").addEventListener("click", rollDice);
