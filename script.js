@@ -12,56 +12,33 @@ fetch(apiUrl)
       };
     });
 
-    // 3. Store the spell data in an array of objects.
-    const fetchSpellDataPromises = spells.map((spell) =>
-      fetch(spell.url)
-        .then((response) => response.json())
-        .then((data) => {
-          return {
-            name: spell.name,
-            level: data.level,
-            school: data.school.name,
-            castingTime: data.casting_time,
-            range: data.range,
-            components: data.components.map((component) => component.name).join(', '),
-            duration: data.duration,
-            description: data.desc.join(' '),
-          };
-        })
-    );
-
-    Promise.all(fetchSpellDataPromises).then((spellData) => {
-      // 4. Create a search function that filters the array of spells based on user input.
-      function searchSpells(query) {
-        return spellData.filter((spell) => {
-          return spell.name.toLowerCase().includes(query.toLowerCase());
-        });
-      }
-
-      // 5. Create a display function that generates HTML to display the filtered spells.
-      function displaySpells(spellList) {
-        const table = document.createElement('table');
-        const headerRow = document.createElement('tr');
-        // ... (rest of the displaySpells function remains the same)
-
-        document.body.appendChild(table);
-      }
-
-      // 6. Create an input field and button to allow the user to search for spells.
-      const searchInput = document.createElement('input');
-      searchInput.type = 'text';
-      searchInput.placeholder = 'Search for a spell...';
-      document.body.appendChild(searchInput);
-
-      const searchButton = document.createElement('button');
-      searchButton.textContent = 'Search';
-      document.body.appendChild(searchButton);
-
-      // 7. Add an event listener to the button that calls the search and display functions.
-      searchButton.addEventListener('click', () => {
-        const query = searchInput.value;
-        const matchingSpells = searchSpells(query);
-        displaySpells(matchingSpells);
+// 3. Add event listeners to the buttons to display the spell data from api when clicked.
+    const buttons = document.querySelectorAll('button');
+    buttons.forEach((button) => {
+      button.addEventListener('click', (event) => {
+        const spellName = event.target.textContent;
+        const spell = spells.find((spell) => spell.name === spellName);
+        fetch(spell.url)
+          .then((response) => response.json())
+          .then((data) => {
+            const spellData = {
+              name: data.name,
+              desc: data.desc,
+              higherLevel: data.higher_level,
+              range: data.range,
+              components: data.components,
+              material: data.material,
+              ritual: data.ritual,
+              duration: data.duration,
+              concentration: data.concentration,
+              castingTime: data.casting_time,
+              level: data.level,
+              school: data.school,
+              classes: data.classes,
+              subclasses: data.subclasses,
+            };
+            displaySpell(spellData);
+          });
       });
     });
-  });
+  }
