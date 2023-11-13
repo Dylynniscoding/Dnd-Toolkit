@@ -5,9 +5,12 @@ async function searchSpells() {
     const results = data.results.filter(spell => spell.name.toLowerCase().includes(searchInput));
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
-    results.forEach(spell => {
-    const spellDiv = document.createElement('div');
-    spellDiv.innerHTML = `<h3>${spell.name}</h3><p>${spell.desc}</p>`;
-    resultsDiv.appendChild(spellDiv);
+    results.forEach(async spell => {
+        const spellResponse = await fetch(`https://www.dnd5eapi.co${spell.url}`);
+        const spellData = await spellResponse.json();
+        const spellDiv = document.createElement('div');
+        spellDiv.innerHTML = `<h3>${spellData.name}</h3><p>${spellData.desc}</p>`;
+        //adding "spell description" heading to the "spellDiv" element
+        resultsDiv.appendChild(spellDiv);
     });
-  }
+}
