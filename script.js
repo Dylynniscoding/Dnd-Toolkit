@@ -20,4 +20,4 @@ document.getElementById("roll-button").addEventListener("click", rollDice);
 function roll20() {
     let roll = Math.floor(Math.random() * 20) + 1;
     return roll;
-}
+    }

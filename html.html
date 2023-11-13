@@ -4,17 +4,22 @@
   <script src="script.js">
   
   </script>
-    <title>D&D Spell Search</title>
+    <title>D&D toolkit</title>
+    <h1 id="title">D&D toolkit</h1>
   </head>
   <body>
-    <h1>D&D Spell Search</h1>
+    <h2>D&D Spell Search</h2>
     <input type="text" id="search-bar" placeholder="Spell name">
     <button onclick="searchSpells()">Search</button>
     <div id="results"></div>
     
-    <h1>Dice roller</h1>
-    <input type="text" id="dice-input" placeholder="Dice roll">
-    <button onclick="rollDice()">Roll</button>
+    <h2>Dice roller</h2>
+    <button onclick="rollDice()">d20</button>
+    <button onclick="rollDice()"> d10</button>
+    <button onclick="rollDice()"> d8</button>
+    <button onclick="rollDice()"> d6</button>
+    <button onclick="rollDice()"> d4</button>
+    <button onclick="rollDice()"> d100</button>
     <div id="dice-results"></div>
   </body>
 </html>
