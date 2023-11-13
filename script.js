@@ -6,8 +6,8 @@ async function searchSpells() {
     const resultsDiv = document.getElementById('results');
     resultsDiv.innerHTML = '';
     results.forEach(spell => {
-      const spellDiv = document.createElement('div');
-      spellDiv.innerHTML = `<h3>${spell.name}</h3><p>${spell.desc}</p>`;
-      resultsDiv.appendChild(spellDiv);
+    const spellDiv = document.createElement('div');
+    spellDiv.innerHTML = `<h3>${spell.name}</h3><p>${spell.desc}</p>`;
+    resultsDiv.appendChild(spellDiv);
     });
   }
