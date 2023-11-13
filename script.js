@@ -5,7 +5,6 @@ async function searchSpells() {
     const results = data.results.filter(spell => spell.name.toLowerCase().includes(searchInput));
     const resultsDiv = document.getElementById('results');
     const spellDescriptionDiv = 'Spell Description';
-    spellDescriptionDiv.innerHTML = '';
     resultsDiv.innerHTML = '';
     results.forEach(async spell => {
         const spellResponse = await fetch(`https://www.dnd5eapi.co${spell.url}`);
