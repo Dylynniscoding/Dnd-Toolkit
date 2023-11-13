@@ -16,3 +16,8 @@ async function searchSpells() {
 
 //adding dice roll functionality with event listener
 document.getElementById("roll-button").addEventListener("click", rollDice);
+//adding inputs for different dice
+function roll20() {
+    let roll = Math.floor(Math.random() * 20) + 1;
+    return roll;
+}
