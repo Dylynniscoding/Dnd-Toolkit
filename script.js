@@ -10,7 +10,6 @@ async function searchSpells() {
         const spellData = await spellResponse.json();
         const spellDiv = document.createElement('div');
         spellDiv.innerHTML = `<h3>${spellData.name}</h3><p>${spellData.desc}</p>`;
-        //adding "spell description" heading to the "spellDiv" element
         resultsDiv.appendChild(spellDiv);
     });
 }
