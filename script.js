@@ -1,3 +1,4 @@
+//spell search
 async function searchSpells() {
         const response = await fetch('https://www.dnd5eapi.co/api/spells');
         const data = await response.json();
@@ -13,7 +14,7 @@ async function searchSpells() {
                 resultsDiv.appendChild(spellDiv);
         });
 }
-
+//randomizer event listener for = key
 document.addEventListener('keydown', async (event) => {
     if (event.key === '=') {
         const response = await fetch('https://www.dnd5eapi.co/api/spells');
@@ -25,16 +26,17 @@ document.addEventListener('keydown', async (event) => {
         resultsDiv.innerHTML = `<div><h3>${randomSpellData.name}</h3><p>${randomSpellData.desc}</p></div>`;
     }
 });
-//adding a button to switch CSS from light mode to dark mode
-const button = document.querySelector(".button");   
-const theme = document.querySelector("#theme-link");
-button.addEventListener("click", function() {
-    if (theme.getAttribute("href") == "light.css") {
-        theme.href = "dark.css";
-    } else {
-        theme.href = "light.css";
+
+document.addEventListener('mouseover', (event) => {
+    if (event.target.tagName === 'H4') {
+        event.target.style.backgroundColor = 'black';
+        event.target.style.color = 'white';
     }
 });
+
+
+
+
 
 
 
