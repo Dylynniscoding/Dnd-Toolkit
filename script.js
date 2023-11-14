@@ -40,7 +40,7 @@ document.addEventListener('click', (event) => {
     }
 
 });
-
+//mouse over event listener for h4
 document.addEventListener('mouseover', (event) => {
     if (event.target.tagName === 'H4') {
         event.target.style.cursor = 'pointer';
