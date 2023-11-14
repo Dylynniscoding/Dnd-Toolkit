@@ -38,8 +38,14 @@ document.addEventListener('click', (event) => {
             body.style.color = 'white';
         }
     }
+
 });
 
+document.addEventListener('mouseover', (event) => {
+    if (event.target.tagName === 'H4') {
+        event.target.style.cursor = 'pointer';
+    }
+});
 
 
 
