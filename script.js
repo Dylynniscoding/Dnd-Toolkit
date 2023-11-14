@@ -27,13 +27,12 @@ document.addEventListener('keydown', async (event) => {
     }
 });
 
-document.addEventListener('mouseover', (event) => {
+document.addEventListener('click', (event) => {
     if (event.target.tagName === 'H4') {
-        event.target.style.backgroundColor = 'black';
-        event.target.style.color = 'white';
+        document.body.style.backgroundColor = 'black';
+        document.body.style.color = 'white';
     }
 });
-
 
 
 
