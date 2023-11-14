@@ -26,11 +26,17 @@ document.addEventListener('keydown', async (event) => {
         resultsDiv.innerHTML = `<div><h3>${randomSpellData.name}</h3><p>${randomSpellData.desc}</p></div>`;
     }
 });
-
+//light and dark mode toggle
 document.addEventListener('click', (event) => {
     if (event.target.tagName === 'H4') {
-        document.body.style.backgroundColor = 'black';
-        document.body.style.color = 'white';
+        const body = document.body;
+        if (body.style.backgroundColor === 'black') {
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+        } else {
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+        }
     }
 });
 
