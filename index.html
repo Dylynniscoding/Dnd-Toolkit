@@ -13,9 +13,10 @@
   <body>
     <h2>D&D Spell Search</h2>
     <div>Press "=" for a random spell!</div>
-    
-    <input type="text" id="search-bar" placeholder="Spell name">
-    <button onclick="searchSpells()">Search</button>
+    <form id="search-form" onsubmit="searchSpells(); return false;">
+    <input type="text" id="search-bar" placeholder="Spell name" />
+    <input type="submit" value="Search" />
+    </form>
     <div id="results"></div>
     
 <h4>Light/Dark mode</h4>
