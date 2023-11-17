@@ -1,7 +1,8 @@
-//spell search
+//define variables globally
 let spellArray = null;
 let spellDetails = {};
 
+//spell search
 // creates empty array for spells to go in locally on page load
 addEventListener("DOMContentLoaded", async () => {
   // Fetch data from API
@@ -57,7 +58,7 @@ async function searchSpells() {
 document.addEventListener("keydown", async (event) => {
   // checks if key pressed is =
   if (event.key === "=") {
-    
+    // gets random spell index
     const randomSpellIndex = Math.floor(Math.random() * spellArray.length);
     // gets random spell data
     const spell = spellArray[randomSpellIndex];
