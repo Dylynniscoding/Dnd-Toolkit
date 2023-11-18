@@ -1,0 +1,84 @@
+/*
+  Helpful notes from a robot, re: ordering CSS attributes:
+    1. Layout (e.g., width, height, margin, padding, display, position, float, etc.)
+    
+    2. Typography (e.g., font-size, font-weight, line-height, font-family, etc.)
+
+    3. Box model (e.g., border, border-radius, box-shadow, background-color, etc.)
+
+    4. Text (e.g., color, text-align, text-transform, etc.)
+
+    5. Other (e.g., transition, transform, opacity, etc.)
+
+
+  So maybe another way to think of this would be:
+    1. Position & Padding
+    2. Font stuff
+    3. Box & Border (color)
+    4. Text (color)
+    5. Other (animations)
+ */
+
+/* CSS Variables! (For super simple dark mode ^_^) */
+:root {
+    --body-bg: lightsteelblue;
+    --text-color: black;
+}
+
+.dark_mode {
+    --body-bg: #222;
+    --text-color: #fcd9d9;
+}
+
+body {
+    background-color: var(--body-bg);
+}
+
+/* Block: Container */
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container__text {
+    font-family: 'Lobster', serif;
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+    text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container__para {
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+
+/* Dylynn's CSS.CSS */
+/* Light mode */
+/*
+.h4 {
+    position: absolute;
+    bottom: 0px;
+}
+
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+}
+*/
+
+/* Dark mode */
+/*
+body.dark-mode {
+  background-color: #333;
+  color: #f5f5f5;
+}
+*/
