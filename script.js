@@ -71,15 +71,28 @@ document.addEventListener("keydown", async (event) => {
   }
 });
 // light and dark mode toggle
-let theme_toggle = document.querySelector('#theme_toggle');
-
-// click event listener for the theme toggle
-theme_toggle.addEventListener("click", () => {
-    document.body.classList.toggle('dark_mode');
+// click event listener for h4
+document.addEventListener("click", (event) => {
+  //checks if h4 is clicked
+  if (event.target.tagName === "H4") {
+    //changes background color and text color checking if it is one color or the other
+    const body = document.body;
+    if (body.style.backgroundColor === "black") {
+      body.style.backgroundColor = "white";
+      body.style.color = "black";
+    } else {
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+    }
+  }
 });
-
-// mouse over event listener for the theme toggle
-theme_toggle.addEventListener("mouseover", (event) => {
+//mouse over event listener for h4
+//adds event listener for mouse over
+document.addEventListener("mouseover", (event) => {
+  //checks if h4 is moused over
+  if (event.target.tagName === "H4") {
+    //changes cursor to pointer when moused over
     event.target.style.cursor = "pointer";
+  }
 });
 
