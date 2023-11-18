@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster">
-    <link href="index.css" rel="stylesheet">
+  <script src="script.js">
+  
+  </script>
+
+  <style src = "CSS.CSS">
+  </style>
     <title>D&D toolkit</title>
+    <h1 id="title">D&D toolkit</h1>
   </head>
   <body>
-      <div class="container">
-        <h2 class="container__text">D&D Spell Search</h2>
-        <div class="container__para">Press "=" for a random spell!</div>
-        <form class="container__para" id="search-form" onsubmit="searchSpells(); return false;">
-        <input type="text" id="search-bar" placeholder="Spell name" />
-        <input type="submit" value="Search" />
-        </form>
-        <div class="container__para" id="results"></div>
-        
-        <span id="theme_toggle" class="container__para">Light/Dark mode</span>
-      </div>
-      <script src="script.js"></script>
+    <h2>D&D Spell Search</h2>
+    <div>Press "=" for a random spell!</div>
+    <form id="search-form" onsubmit="searchSpells(); return false;">
+    <input type="text" id="search-bar" placeholder="Spell name" />
+    <input type="submit" value="Search" />
+    </form>
+    <div id="results"></div>
+    
+<h4>Light/Dark mode</h4>
+
+
   </body>
 </html>
 
