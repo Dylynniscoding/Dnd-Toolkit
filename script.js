@@ -95,4 +95,3 @@ document.addEventListener("mouseover", (event) => {
     event.target.style.cursor = "pointer";
   }
 });
-
