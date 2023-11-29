@@ -11,9 +11,7 @@ There is also a random spell functionality. In order to use that press the "=" k
 
 ## Authors
 
-Contributors names and contact info
-
-Dylynn Barrows
+Dylynn Barrows - tumblr.com/dylynniscoding
 
 ## Version History
 
