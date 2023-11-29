@@ -18,8 +18,8 @@ Dylynn Barrows
 ## Version History
 
 * 1.1
-    *added random functionality 
-    *added light and dark modes
+    * added random functionality 
+    * added light and dark modes
 * 1.0
     * Initial Release
 
